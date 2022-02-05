@@ -1,3 +1,6 @@
+<?php 
+require_once("mail.php");
+?>
 <!DOCTYPE html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -41,7 +44,7 @@
         >
       </p>
     </form>
-    <form class="form form--hidden" id="forgotPassword">
+    <form method="POST" class="form form--hidden" id="forgotPassword">
       <h1 class="form__title">Forgot password</h1>
       <div class="form__message form__message--error"></div>
       <div class="form__input-group">
@@ -49,11 +52,13 @@
           type="text"
           class="form__input"
           autofocus
+          name="email"
+          autocomplete="off"
           placeholder="Email Address"
         />
         <div class="form__input-error-message"></div>
       </div>
-      <button class="form__button" type="submit">Continue</button>
+      <button name="submit" class="form__button" type="submit">Continue</button>
       <p class="form__text">
         <a class="form__link" href="./" id="linkLogin"
           >Already have an account? Sign in</a
